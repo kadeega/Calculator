@@ -1,0 +1,22 @@
+*{
+    /* margin: 0%; */
+    background-color: antiquewhite;
+}
+
+/* .calculator{
+    height: fit-content;
+    width: fit-content;
+    background-color: aquamarine;
+} */
+
+.numbers{
+    height: 350px;
+    width: fit-content;
+    border-style: solid;
+    border-color: black;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.delAll, .del{
+    grid-template-columns: repeat(2,1fr);
+}
