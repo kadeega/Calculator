@@ -1,22 +1,152 @@
-*{
-    /* margin: 0%; */
-    background-color: antiquewhite;
-}
 
-/* .calculator{
+body{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.calculator{
     height: fit-content;
     width: fit-content;
-    background-color: aquamarine;
-} */
+    background-color: rgb(227, 179, 116);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.text{
+    width: 350px;
+    height: 60px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    /* padding: 15px; */
+    overflow: hidden; 
+    padding: 5px;
+    text-overflow: ellipsis;
+    text-align: center;
+    /* border-style: solid;
+    border-width: 1px;
+    border-color: rgb(129, 118, 104); */
+
+    /* herrree */
+}
+
+#in{
+    width: 310px;
+    height: 25px;
+    font-size: 11mm;
+    border-radius: 15px;
+    padding: 15px;
+    border-width: 0px;
+    background-color: aliceblue;
+}
 
 .numbers{
     height: 350px;
-    width: fit-content;
-    border-style: solid;
-    border-color: black;
+    width: 100%;
+    /* border-style: solid;
+    border-color: black; */
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    gap: 10px 10px;
+    
 }
-.delAll, .del{
-    grid-template-columns: repeat(2,1fr);
+
+.num7{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num8{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num9{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.division{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num4{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num5{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num6{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.mul{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num1{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num2{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num3{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.sub{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.num0{
+    border-radius: 15px;
+    border-width: 0px;
+}
+.point{
+    border-radius: 15px;
+    border-width: 0px;
+}
+
+
+.num0:hover, .num1:hover, .num2:hover, .num3:hover, .num4:hover, .num5:hover, .num6:hover, .num7:hover, .num8:hover, .num9:hover, .delAll:hover, .del:hover, .division:hover, .mul:hover, .sub:hover, .plus:hover, .point:hover, .equal:hover{
+    background-color: rgb(255, 228, 196);
+}
+.num0, .num1, .num2, .num3, .num4, .num5, .num6, .num7, .num8, .num9, .delAll, .del, .division, .mul, .sub, .plus, .point, .equal{
+    border-radius: 15px;
+    border-width: 0px;
+    font-weight: bold;
+    font-size: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(129, 118, 104);
+    color: rgb(70, 62, 51);
+}
+.plus{
+    color: rgb(224, 117, 10);
+}
+.equal{
+    color: rgb(224, 117, 10);
+}
+.sub{
+    color: rgb(224, 117, 10);
+}
+.mul{
+    color: rgb(224, 117, 10);
+}
+.division{
+    color: rgb(224, 117, 10);
+}
+.delAll{
+    color: rgb(224, 117, 10);
+    grid-column: 1/3;
+    font-size: 13px;
+}
+.del{
+    color: rgb(224, 117, 10);
+    grid-column: 3/5;
+    font-size: 13px;
 }
