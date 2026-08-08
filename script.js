@@ -21,68 +21,207 @@ const plus = document.querySelector('.plus');
 const sub = document.querySelector('.sub');
 
 const equal = document.querySelector('.equal');
-const poinputt = document.querySelector('.poinputt');
+const point = document.querySelector('.point');
 
-function result(num){
+let number1;
+let number2;
+let operation;
+let result;
+
+function screen(num){
     input.value += num.textContent;
 }
 
 function delFun(t){
-    input.value = t.substrinputg(0, t.length-1);
+    input.value = t.substring(0, t.length-1);
 }
 
 function delAllFun(){
     input.value = "";
 }
 
-// n0.addEventListener('click', result(n0));
+// n0.addEventListener('click', screen(n0));
+document.addEventListener("keydown", (event) => {
+    if (event.key === "0") {
+        screen(n0);
+    }
+    else if (event.key === "1") {
+        screen(n1);
+    }
+    else if (event.key === "2") {
+        screen(n2);
+    }
+    else if (event.key === "3") {
+        screen(n3);
+    }
+    else if (event.key === "4") {
+        screen(n4);
+    }
+    else if (event.key === "5") {
+        screen(n5);
+    }
+    else if (event.key === "6") {
+        screen(n6);
+    }
+    else if (event.key === "7") {
+        screen(n7);
+    }
+    else if (event.key === "8") {
+        screen(n8);
+    }
+    else if (event.key === "9") {
+        screen(n9);
+    }
+    else if (event.key === "=") {
+        number2 = input.value;
+        // screen(equal);
+        console.log(number1);
+        console.log(number2);
+        console.log(operation);
+        switch (operation){
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            case '/':
+                result = number1 / number2;
+                break;
+            default:
+                break;
+        }
+        input.value = result;
+    }
+    else if (event.key === "+") {
+        number1 = input.value;
+        operation = '+'; 
+        plus.style.backgroundColor = "blue";
+        // screen(plus);
+        input.value = "";
+    }
+    else if (event.key === "-") {
+        number1 = input.value;
+        operation = '-'; 
+        plus.style.backgroundColor = "blue";
+        // screen(sub);
+        input.value = "";
+    }
+    else if (event.key === "*" || event.key === "x" || event.key === "X") {
+        number1 = input.value;
+        operation = '*'; 
+        plus.style.backgroundColor = "blue";
+        // screen(mul);
+        input.value = "";
+    }
+    else if (event.key === "/") {
+        number1 = u=input.value;
+        operation = '/'; 
+        plus.style.backgroundColor = "blue";
+        // screen(div);
+        input.value = "";
+    }
+    else if (event.key === "Backspace") {
+        delFun(input.value);
+    }
+    else if (event.key === "Esc") {
+        delAllFun();
+    }
+    
+});
+
+
 n0.addEventListener('click', () => {
-    result(n0);
+    screen(n0);
 });
 n1.addEventListener('click', () => {
-    result(n1);
+    screen(n1);
 });
 n2.addEventListener('click', () => {
-    result(n2);
+    screen(n2);
 });
 n3.addEventListener('click', () => {
-    result(n3);
+    screen(n3);
 });
 n4.addEventListener('click', () => {
-    result(n4);
+    screen(n4);
 });
 n5.addEventListener('click', () => {
-    result(n5);
+    screen(n5);
 });
 n6.addEventListener('click', () => {
-    result(n6);
+    screen(n6);
 });
 n7.addEventListener('click', () => {
-    result(n7);
+    screen(n7);
 });
 n8.addEventListener('click', () => {
-    result(n8);
+    screen(n8);
 });
 n9.addEventListener('click', () => {
-    result(n9);
+    screen(n9);
 });
-poinputt.addEventListener('click', () => {
-    result(poinputt);
+point.addEventListener('click', () => {
+    screen(point);
 });
 equal.addEventListener('click', () => {
-    result(equal);
+    number2 = input.value;
+    // screen(equal);
+    console.log(number1);
+    console.log(number2);
+    console.log(operation);
+    switch (operation){
+        case '+':
+            result = number1 + number2;
+            break;
+        case '-':
+            result = number1 - number2;
+            break;
+        case '*':
+            result = number1 * number2;
+            break;
+        case '/':
+            result = number1 / number2;
+            break;
+        default:
+            break;
+    }
+    input.value = result;
 });
 mul.addEventListener('click', () => {
-    result(mul);
+    number1 = input.value;
+    operation = '*'; 
+    plus.style.backgroundColor = "blue";
+    // screen(mul);
+    input.value = "";
+    
 });
 div.addEventListener('click', () => {
-    result(div);
+    number1 = u=input.value;
+    operation = '/'; 
+    plus.style.backgroundColor = "blue";
+    // screen(div);
+    input.value = "";
+    
 });
 plus.addEventListener('click', () => {
-    result(plus);
+    number1 = input.value;
+    operation = '+'; 
+    plus.style.backgroundColor = "blue";
+    // screen(plus);
+    input.value = "";
+    
 });
 sub.addEventListener('click', () => {
-    result(sub);
+    number1 = input.value;
+    operation = '-'; 
+    plus.style.backgroundColor = "blue";
+    // screen(sub);
+    input.value = "";
+    
 });
 
 
@@ -92,3 +231,4 @@ del.addEventListener('click', () => {
 delAll.addEventListener('click', () => {
     delAllFun();
 });
+

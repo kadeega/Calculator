@@ -112,7 +112,7 @@ body{
 }
 
 
-.num0:hover, .num1:hover, .num2:hover, .num3:hover, .num4:hover, .num5:hover, .num6:hover, .num7:hover, .num8:hover, .num9:hover, .delAll:hover, .del:hover, .division:hover, .mul:hover, .sub:hover, .plus:hover, .point:hover, .equal:hover{
+.num0:hover, .num0:active, .num1:hover, .num2:hover, .num3:hover, .num4:hover, .num5:hover, .num6:hover, .num7:hover, .num8:hover, .num9:hover, .delAll:hover, .del:hover, .division:hover, .mul:hover, .sub:hover, .plus:hover, .point:hover, .equal:hover{
     background-color: rgb(255, 228, 196);
 }
 .num0, .num1, .num2, .num3, .num4, .num5, .num6, .num7, .num8, .num9, .delAll, .del, .division, .mul, .sub, .plus, .point, .equal{
