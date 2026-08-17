@@ -18,7 +18,7 @@ const delAll = document.querySelector('.delAll');
 const div = document.querySelector('.division');
 const mul = document.querySelector('.mul');
 const plus = document.querySelector('.plus');
-const sub = document.querySelector('.sub');
+const subb = document.querySelector('.sub');
 
 const equal = document.querySelector('.equal');
 const point = document.querySelector('.point');
@@ -33,14 +33,18 @@ function screen(num){
 }
 
 function delFun(t){
-    input.value = t.substring(0, t.length-1);
+    if(t === 'undefined'){
+        delAllFun();
+    }
+    else{
+        input.value = t.substring(0, t.length-1);
+    }
 }
 
 function delAllFun(){
     input.value = "";
 }
 
-// n0.addEventListener('click', screen(n0));
 document.addEventListener("keydown", (event) => {
     if (event.key === "0") {
         screen(n0);
@@ -73,61 +77,71 @@ document.addEventListener("keydown", (event) => {
         screen(n9);
     }
     else if (event.key === "=") {
-        number2 = input.value;
+        number2 = Number(input.value);
         // screen(equal);
         console.log(number1);
         console.log(number2);
         console.log(operation);
         switch (operation){
-            case '+':
-                result = number1 + number2;
-                break;
-            case '-':
-                result = number1 - number2;
-                break;
-            case '*':
-                result = number1 * number2;
-                break;
-            case '/':
-                result = number1 / number2;
-                break;
-            default:
-                break;
-        }
+        case '+':
+            result = number1 + number2;
+            plus.style.backgroundColor = "#F0F0F0";
+            break;
+        case '-':
+            result = number1 - number2;
+            subb.style.backgroundColor = "#F0F0F0";
+            break;
+        case '*':
+            result = number1 * number2;
+            mul.style.backgroundColor = "#F0F0F0";
+            break;
+        case '/':
+            result = number1 / number2;
+            div.style.backgroundColor = "#F0F0F0";
+            break;
+        default:
+            break;
+    }
         input.value = result;
     }
     else if (event.key === "+") {
-        number1 = input.value;
+        number1 =  Number(input.value);
         operation = '+'; 
-        plus.style.backgroundColor = "blue";
+        plus.style.backgroundColor = "rgb(232, 226, 115)";
         // screen(plus);
         input.value = "";
     }
     else if (event.key === "-") {
-        number1 = input.value;
-        operation = '-'; 
-        plus.style.backgroundColor = "blue";
-        // screen(sub);
-        input.value = "";
+        if(input.value === ""){
+        screen(subb);
+        }
+        else{
+            number1 =  Number(input.value);
+            operation = '-'; 
+            subb.style.backgroundColor = "rgb(232, 226, 115)";
+            input.value = "";
+        }
     }
     else if (event.key === "*" || event.key === "x" || event.key === "X") {
-        number1 = input.value;
+        number1 =  Number(input.value);
         operation = '*'; 
-        plus.style.backgroundColor = "blue";
-        // screen(mul);
+        mul.style.backgroundColor = "rgb(232, 226, 115)";
         input.value = "";
     }
     else if (event.key === "/") {
-        number1 = u=input.value;
+        number1 =  Number(input.value);
         operation = '/'; 
-        plus.style.backgroundColor = "blue";
-        // screen(div);
+        div.style.backgroundColor = "rgb(232, 226, 115)";
         input.value = "";
+    }
+    else if (event.key === ".") {
+        screen(point);
+        div.style.backgroundColor = "rgb(232, 226, 115)";
     }
     else if (event.key === "Backspace") {
         delFun(input.value);
     }
-    else if (event.key === "Esc") {
+    else if (event.key === "Escape") {
         delAllFun();
     }
     
@@ -168,7 +182,7 @@ point.addEventListener('click', () => {
     screen(point);
 });
 equal.addEventListener('click', () => {
-    number2 = input.value;
+    number2 = Number(input.value);
     // screen(equal);
     console.log(number1);
     console.log(number2);
@@ -176,15 +190,19 @@ equal.addEventListener('click', () => {
     switch (operation){
         case '+':
             result = number1 + number2;
+            plus.style.backgroundColor = "#F0F0F0";
             break;
         case '-':
             result = number1 - number2;
+            subb.style.backgroundColor = "#F0F0F0";
             break;
         case '*':
             result = number1 * number2;
+            mul.style.backgroundColor = "#F0F0F0";
             break;
         case '/':
             result = number1 / number2;
+            div.style.backgroundColor = "#F0F0F0";
             break;
         default:
             break;
@@ -192,36 +210,37 @@ equal.addEventListener('click', () => {
     input.value = result;
 });
 mul.addEventListener('click', () => {
-    number1 = input.value;
+    number1 =  Number(input.value);
     operation = '*'; 
-    plus.style.backgroundColor = "blue";
-    // screen(mul);
+    mul.style.backgroundColor = "rgb(232, 226, 115)";
     input.value = "";
     
 });
 div.addEventListener('click', () => {
-    number1 = u=input.value;
+    number1 =  Number(input.value);
     operation = '/'; 
-    plus.style.backgroundColor = "blue";
-    // screen(div);
+    div.style.backgroundColor = "rgb(232, 226, 115)";
     input.value = "";
     
 });
 plus.addEventListener('click', () => {
-    number1 = input.value;
+    number1 =  Number(input.value);
     operation = '+'; 
-    plus.style.backgroundColor = "blue";
-    // screen(plus);
+    plus.style.backgroundColor = "rgb(232, 226, 115)";
     input.value = "";
     
 });
-sub.addEventListener('click', () => {
-    number1 = input.value;
-    operation = '-'; 
-    plus.style.backgroundColor = "blue";
-    // screen(sub);
-    input.value = "";
-    
+subb.addEventListener('click', () => {
+    if(input.value === ""){
+        screen(subb);
+    }
+    else{
+        number1 =  Number(input.value);
+        operation = '-'; 
+        subb.style.backgroundColor = "rgb(232, 226, 115)";
+        
+        input.value = "";
+    }
 });
 
 
